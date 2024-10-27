@@ -63,6 +63,7 @@ body::-webkit-scrollbar-thumb {
 .container {
     width: 100%;
     max-width: 1200px;
+    padding: 0 15px;
     margin: 0 auto;
     position: relative;
 }
@@ -127,14 +128,15 @@ body::-webkit-scrollbar-thumb {
     margin-top: 10px;
     display: inline-block;
     background-color: var(--color-darkblue);
-    transform-origin: left;
+    transform-origin: right;
     transform: scaleX(0);
-    transition: var(--transition-standard);
+    transition: transform 0.4s;
 }
 
 .linksetup:hover::after,
-.linksetup:active::after {
-    transform-origin: right;
+.linksetup:active::after,
+.linksetup.active::after {
+    transform-origin: left;
     transform: scaleX(1)
 }
 
@@ -439,7 +441,13 @@ body::-webkit-scrollbar-thumb {
 /* ======================================== */
 /* NAVBAR */
 .navbar {
-    padding: 20px 30px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--color-white);
+    z-index: 2;
 }
 
 .navbar-container {
@@ -578,7 +586,6 @@ body::-webkit-scrollbar-thumb {
 .sidebar-menu__link:link,
 .sidebar-menu__link:visited {
     text-align: center;
-    flex: 0 0 100%;
     font-size: 25px;
     margin-bottom: 35px;
 }
@@ -624,6 +631,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;    
     overflow: hidden;
+    margin-top: 73px;
 }
 
 .header-main {
