@@ -36,48 +36,15 @@
     });
 
 
-    /* SIDEBAR */
-    var hamburger = document.querySelector('.hamburger');
-    var sidebar_overlay = document.querySelector('.sidebar-overlay');
-
-    hamburger.addEventListener('click', function(){
-        var answer = this.classList.contains('hamburger--open');
-        showSidebar(answer);
-    });
-
-    sidebar_overlay.addEventListener('click', function(){
-        var answer = hamburger.classList.contains('hamburger--open');
-        showSidebar(answer);
-    });
 
 
     // AUTOMATED YEAR DATE 
-    var date = new Date();
-    document.querySelector('.copyright__span').innerHTML = date.getFullYear();
+
 
 
 })();
 
 
-function showSidebar(data) {
-    
-    var hamburger = document.querySelector('.hamburger');
-    var sidebar = document.querySelector('.sidebar');
-    var sidebar_overlay = document.querySelector('.sidebar-overlay');
-
-    if(data === false) {
-        hamburger.classList.add('hamburger--open'); 
-        sidebar.classList.add('sidebar--show');
-        sidebar_overlay.classList.add('sidebar-overlay--show');
-        document.body.classList.add('body-overflow');
-
-    } else { 
-        hamburger.classList.remove('hamburger--open'); 
-        sidebar.classList.remove('sidebar--show');
-        sidebar_overlay.classList.remove('sidebar-overlay--show');         
-        document.body.classList.remove('body-overflow');
-    }
-}
 
 
 function deskAnimation_header() {

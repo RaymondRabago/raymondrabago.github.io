@@ -5,6 +5,58 @@ const isThere = (element) => {
 
 const siteFunc = {
 
+    initMobNavbar: () => {
+        const hamburger = document.querySelector('.hamburger');
+
+        if(isThere(hamburger)) {
+            hamburger.addEventListener('click', function(){
+                let answer = this.classList.contains('hamburger--open');
+                siteFunc.showMobNavbar(answer);
+            });
+        }
+     
+    },
+
+    activateMobOverlayFunc: () => {
+        const hamburger = document.querySelector('.hamburger');
+        const menuOverlay = document.querySelector('.navbar-overlay');
+
+        if(isThere(sidebar_overlay)  && isThere(hamburger)) {
+            menuOverlay.addEventListener('click', function(){
+                let answer = hamburger.classList.contains('hamburger--open');
+                siteFunc.showMobNavbar(answer);
+            });   
+        }        
+    },
+
+    showMobNavbar: (data) => {
+        let hamburger = document.querySelector('.hamburger');
+        let menu = document.querySelector('.navbar-menu');
+
+        if(isThere(hamburger) && isThere(menu)) {
+            if(data === false) {
+                hamburger.classList.add('hamburger--open'); 
+                menu.classList.add('navbar-menu--show');
+                document.body.classList.add('body-overflow');
+
+                // CREATE MENU OVERLAY 
+                const menuOverlay = document.createElement('span');
+                menuOverlay.className = 'navbar-overlay';
+                document.body.append(menuOverlay);
+                siteFunc.activateMobOverlayFunc();
+
+            } else { 
+                hamburger.classList.remove('hamburger--open'); 
+                menu.classList.remove('navbar-menu--show');
+                document.body.classList.remove('body-overflow');
+
+                // REMOVE MENU OVERLAY 
+                document.querySelector('.navbar-overlay').remove();
+            }
+        }
+
+    },
+
     updateActiveSection: () => {
         const sections = document.querySelectorAll('.js-section');
 
@@ -41,13 +93,25 @@ const siteFunc = {
 
     },
 
+    automatedYear: () => {
+        var date = new Date();
+        document.querySelector('.copyright__span').innerHTML = date.getFullYear();
+    },
 
     init: () => {
-    
+        siteFunc.initMobNavbar();
+        siteFunc.automatedYear();
     },
 }
 
-// During Scroll
+window.addEventListener("DOMContentLoaded", (event) => {
+    siteFunc.init();
+
+    /* RELOAD WHEN RESIZE */
+    // window.onresize = () => location.reload();
+});
+
+// DURING SCROLL
 window.addEventListener('scroll', () => {
     siteFunc.updateActiveSection();
 });
