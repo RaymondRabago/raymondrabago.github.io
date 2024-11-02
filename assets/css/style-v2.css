@@ -36,7 +36,6 @@ p {
     --color-black: #000000;
     
     --color-dirtywhite: #e0e1dd;
-    --color-lightgray: #cccccc;
     --color-gray: #808080;
     --color-lightblue: #778da9;
     --color-midblue: #415a77;
@@ -612,19 +611,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-background__title {
+    position: relative;
     font-size: 10rem;
     font-weight: 800;
     letter-spacing: 2px;
     height: 160px;
     overflow: hidden;
-    position: relative;
+    opacity: 0.2;
 
     color: var(--color-white);
     text-shadow: 
-        -1px -1px 0px var( --color-lightgray),
-        1px -1px 0px var( --color-lightgray),
-        -1px 1px 0px var( --color-lightgray),
-        1px 1px 0px var( --color-lightgray);    
+        -1.5px -1.5px 0px var( --color-black),
+        1.5px -1.5px 0px var( --color-black),
+        -1.5px 1.5px 0px var( --color-black),
+        1.5px 1.5px 0px var( --color-black);    
 }
 
 .header-background__title:nth-of-type(2) {
