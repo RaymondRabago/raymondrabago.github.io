@@ -36,6 +36,8 @@ p {
     --color-black: #000000;
     
     --color-dirtywhite: #e0e1dd;
+    --color-lightgray: #cccccc;
+    --color-gray: #808080;
     --color-lightblue: #778da9;
     --color-midblue: #415a77;
     --color-darkblue: #1b263b;
@@ -610,17 +612,20 @@ body::-webkit-scrollbar-thumb {
     font-size: 10rem;
     font-weight: 800;
     letter-spacing: 2px;
-    opacity: 0.2;
     height: 160px;
     overflow: hidden;
     position: relative;
 
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px;
+    color: var(--color-white);
+    text-shadow: 
+        -1px -1px 0px var( --color-lightgray),
+        1px -1px 0px var( --color-lightgray),
+        -1px 1px 0px var( --color-lightgray),
+        1px 1px 0px var( --color-lightgray);    
 }
 
 .header-background__title:nth-of-type(2) {
-    height:186px;
+    height:188px;
 }
 
 .header-background__span {
@@ -665,8 +670,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-titles--diff {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px;    
+    color: var(--color-dirtywhite); 
+    text-shadow: 
+        -1px -1px 0px var( --color-gray),
+        1px -1px 0px var( --color-gray),
+        -1px 1px 0px var( --color-gray),
+        1px 1px 0px var( --color-gray);  
 }
 
 .about-titles--diff:last-of-type {
@@ -794,8 +803,12 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.1;
     font-style: italic;
 
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 1px;
+    color: var(--color-darkerblue); 
+    text-shadow: 
+        -1px -1px 0px var( --color-white),
+        1px -1px 0px var( --color-white),
+        -1px 1px 0px var( --color-white),
+        1px 1px 0px var( --color-white);      
 }
 
 .featured-titles__mobile {
