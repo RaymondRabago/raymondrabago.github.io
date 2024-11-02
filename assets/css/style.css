@@ -764,6 +764,7 @@ body::-webkit-scrollbar-thumb {
     margin: 5px 0 20px;
     width: 100%;
     max-width: 400px;
+    list-style: none;
 }
 
 .about-skills__p {
