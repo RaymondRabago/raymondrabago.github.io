@@ -568,14 +568,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-main {
+    position: relative;
     max-width: 700px;
     width: 100%;
     padding: 0 30px 0 0;
+    z-index: 1;
 }
 
 .header-main__title {
     font-size: 5rem;
     font-weight: 400;
+    line-height: 1;
     display: inline-block;
 }
 
@@ -655,6 +658,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-titles__content {
+    font-weight: 700;
     font-size: 7.1875rem;
     text-align: left;
     line-height: 0.9;
@@ -793,6 +797,7 @@ body::-webkit-scrollbar-thumb {
 .featured-titles__content {
     font-size: 6.25rem;
     font-weight: 700;
+    line-height: 1;
     text-transform: uppercase;
     color: var(--color-white);
     white-space: nowrap;
