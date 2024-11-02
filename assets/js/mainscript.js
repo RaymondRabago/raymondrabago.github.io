@@ -21,7 +21,7 @@ const siteFunc = {
         const hamburger = document.querySelector('.hamburger');
         const menuOverlay = document.querySelector('.navbar-overlay');
 
-        if(isThere(sidebar_overlay)  && isThere(hamburger)) {
+        if(isThere(menuOverlay)  && isThere(hamburger)) {
             menuOverlay.addEventListener('click', function(){
                 let answer = hamburger.classList.contains('hamburger--open');
                 siteFunc.showMobNavbar(answer);
@@ -95,7 +95,8 @@ const siteFunc = {
 
     goToSection: () => {
         const links = document.querySelectorAll('a[href^="#"]');
-
+        const hamburger = document.querySelector('.hamburger');
+        
         links.forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -103,6 +104,12 @@ const siteFunc = {
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+
+                if(isThere(hamburger)) {
+                    let isHamburgerOpen = hamburger.classList.contains('hamburger--open');
+                    siteFunc.showMobNavbar(isHamburgerOpen);
+                }
+
             });
         });
 
