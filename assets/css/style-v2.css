@@ -21,7 +21,7 @@ a:visited {
 }
 
 p {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 1.5;
 }
 /* ======================================== */
@@ -71,7 +71,7 @@ body::-webkit-scrollbar-thumb {
 .btn:link,
 .btn:visited {
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     padding: 12px 15px;
     margin: 15px 0 0;
@@ -111,7 +111,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     background-color: transparent;
     color: var(--color-darkblue);
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight:600;
     padding: 5px 0;
     text-align:center;
@@ -240,7 +240,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .ftcard__sitename {
-    font-size: 35px;
+    font-size: 2.1875rem;
     font-weight: 600;
     color: var(--color-white);
     margin: 15px 0;
@@ -258,7 +258,7 @@ body::-webkit-scrollbar-thumb {
     color: var(--color-dirtywhite);
     padding: 5px 15px;
     margin: 5px 5px 0 0;
-    font-size: 14px;  
+    font-size: 0.875rem;  
 }
 
 /* FEATURED CARD MODIFIER */
@@ -330,7 +330,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     .ftcard__sitename {
-        font-size: 25px;
+        font-size: 1.5625rem;
         margin: 15px 0 5px;
     }
 }
@@ -374,7 +374,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .expcard-info__title {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-white);
 }
@@ -418,7 +418,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     .expcard-info__title {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 }
 /* ======================================== */
@@ -445,7 +445,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar-menu {
-    max-width: 500px;
+    max-width: 550px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -460,14 +460,14 @@ body::-webkit-scrollbar-thumb {
 
 .navbar__link:link,
 .navbar__link:visited {
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight:600;
     margin:0;
 }
 
 .navbar__linkbg:link,
 .navbar__linkbg:visited {
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight:400;
     color: var(--color-white);
     background-color: var(--color-darkerblue);
@@ -572,7 +572,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-main__title {
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 400;
     display: inline-block;
 }
@@ -585,7 +585,6 @@ body::-webkit-scrollbar-thumb {
     max-width: 500px;
     line-height: 1.5;
     margin-top: 20px;
-    font-size: 16px;
 }
 
 .header-main__btn:link,
@@ -608,7 +607,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-background__title {
-    font-size: 160px;
+    font-size: 10rem;
     font-weight: 800;
     letter-spacing: 2px;
     opacity: 0.2;
@@ -651,7 +650,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-titles__content {
-    font-size: 115px;
+    font-size: 7.1875rem;
     text-align: left;
     line-height: 0.9;
     height: 100px;
@@ -717,14 +716,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-info__title {
-    font-size: 50px;
+    font-size: 3.125rem;
     margin-bottom: 20px;
     display: none;
 }
 
 .about-info__p,
 .about-info__p--skills {
-    font-size: 15px;
     margin-bottom: 20px;
     line-height: 1.5;    
 }
@@ -758,7 +756,7 @@ body::-webkit-scrollbar-thumb {
 .about-skills__p {
     padding: 5px 15px;
     margin: 5px 5px 0 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 700;
 }
 
@@ -784,7 +782,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .featured-titles__content {
-    font-size: 100px;
+    font-size: 6.25rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-white);
@@ -801,7 +799,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .featured-titles__mobile {
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 700;
     padding: 0 15px;
     text-transform: uppercase;
@@ -835,7 +833,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .experiment-info__title {
-    font-size: 100px;
+    font-size: 6.25rem;
     color: var(--color-white);    
     position: relative;
     display: inline;
@@ -874,12 +872,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contact__title {
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
 .contact__p {
-    font-size: 15px;
     line-height: 1.5;
 }
 
@@ -908,7 +905,7 @@ body::-webkit-scrollbar-thumb {
 .copyright__p {
     color: var(--color-white);
     text-align: center;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 /* ======================================== */
 
@@ -926,7 +923,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     .header-background__title {
-        font-size: 120px;
+        font-size: 7.5rem;
         height: 120px;
     }
 
@@ -1009,7 +1006,7 @@ body::-webkit-scrollbar-thumb {
     }
     
     .experiment-info__title {
-        font-size:50px;
+        font-size: 3.125rem;
         padding: 0 15px;
     }
 
@@ -1057,12 +1054,12 @@ body::-webkit-scrollbar-thumb {
     .navbar__link:link, 
     .navbar__link:visited {
         text-align: center;
-        font-size: 25px;
+        font-size: 1.5625rem;
     }
 
     .navbar__linkbg:link, 
     .navbar__linkbg:visited {
-        font-size: 25px;
+        font-size: 1.5625rem;
         font-weight:400;
     }
 
@@ -1087,7 +1084,7 @@ body::-webkit-scrollbar-thumb {
 
     /* === HEADER === */
     .header-main__title {
-        font-size: 70px;
+        font-size: 4.375rem;
     }
 
 
@@ -1140,7 +1137,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     .header-main__title {
-        font-size: 55px;
+        font-size: 3.4375rem;
     }
 
     /* === ABOUT === */ 
@@ -1151,12 +1148,12 @@ body::-webkit-scrollbar-thumb {
 
     /* === FEATURED === */
     .featured-titles__mobile {
-        font-size: 40px;
+        font-size: 2.5rem;
     }
 
     /* === EXPERIMENT === */
     .experiment-info__title {
-        font-size: 40px;
+        font-size: 2.5rem;
         display: block;
     }    
 
@@ -1172,7 +1169,7 @@ body::-webkit-scrollbar-thumb {
 
     /* === HEADER === */
     .header-main__title {
-        font-size: 40px;
+        font-size: 2.5rem;
     }
 
 
