@@ -1,173 +1,133 @@
-(function(){
+/* CHECK IF THERE IS THE ELEMENT */ 
+const isThere = (element) => {
+    return typeof(element) != 'undefined' && element != null;
+}
 
-    // FOR DESKTOP MEDIA QUERY
-    var mquery = window.matchMedia('(min-width: 992px)');
-    mquery.addEventListener("change", function() {
-       mediaQueryFunc(mquery);
-    });
-    mediaQueryFunc(mquery);
+const siteFunc = {
 
+    initMobNavbar: () => {
+        const hamburger = document.querySelector('.hamburger');
 
-    // MEDIA QUERY FUNCTION
-    function mediaQueryFunc (reso) {
-        if(reso.matches) {
-            desktopAnimation();
+        if(isThere(hamburger)) {
+            hamburger.addEventListener('click', function(){
+                let answer = this.classList.contains('hamburger--open');
+                siteFunc.showMobNavbar(answer);
+            });
         }
-    }
+     
+    },
 
-    // ANIMATION
-    function desktopAnimation() {
-        deskAnimation_header();
-        deskAnimation_about();
-        deskAnimation_featured();
-        deskAnimation_experiments();
-    }
+    activateMobOverlayFunc: () => {
+        const hamburger = document.querySelector('.hamburger');
+        const menuOverlay = document.querySelector('.navbar-overlay');
 
+        if(isThere(sidebar_overlay)  && isThere(hamburger)) {
+            menuOverlay.addEventListener('click', function(){
+                let answer = hamburger.classList.contains('hamburger--open');
+                siteFunc.showMobNavbar(answer);
+            });   
+        }        
+    },
 
-    // SMOOTH SCROLL NAVBAR 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    showMobNavbar: (data) => {
+        let hamburger = document.querySelector('.hamburger');
+        let menu = document.querySelector('.navbar-menu');
+
+        if(isThere(hamburger) && isThere(menu)) {
+            if(data === false) {
+                hamburger.classList.add('hamburger--open'); 
+                menu.classList.add('navbar-menu--show');
+                document.body.classList.add('body-overflow');
+
+                // CREATE MENU OVERLAY 
+                const menuOverlay = document.createElement('span');
+                menuOverlay.className = 'navbar-overlay';
+                document.body.append(menuOverlay);
+                siteFunc.activateMobOverlayFunc();
+
+            } else { 
+                hamburger.classList.remove('hamburger--open'); 
+                menu.classList.remove('navbar-menu--show');
+                document.body.classList.remove('body-overflow');
+
+                // REMOVE MENU OVERLAY 
+                document.querySelector('.navbar-overlay').remove();
+            }
+        }
+
+    },
+
+    updateActiveSection: () => {
+        const sections = document.querySelectorAll('.js-section');
+
+        sections.forEach((section) => {
+            const halfwindow = window.innerHeight / 2;
+            const curPos = window.scrollY;
+            let newPosition = section.getBoundingClientRect().top + window.scrollY - halfwindow;
+
+            const menus = ['.navbar__link', '.sidebar-menu__link'];
+
+            if (newPosition <= curPos) {
+                const sectionId = section.getAttribute('id');
+
+                menus.forEach((menu) => {
+                    const navbarLinks = document.querySelectorAll(`${menu}`);
+                    const activeNavLink = document.querySelector(`${menu}[href="#${sectionId}"]`);
     
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+                    // Remove the class in the navbar
+                    navbarLinks.forEach((navLink) => {
+                        navLink.classList.remove('active');
+                    });
+    
+                    if(isThere(activeNavLink)) {
+                        // Add class to the active navbar
+                        activeNavLink.classList.add('active');
+                    }
+                })
+
+
+            }
+    
+
+        })
+
+    },
+
+    goToSection: () => {
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+        
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-    });
 
+    },
 
+    automatedYear: () => {
+        var date = new Date();
+        document.querySelector('.copyright__span').innerHTML = date.getFullYear();
+    },
 
-
-    // AUTOMATED YEAR DATE 
-
-
-
-})();
-
-
-
-
-function deskAnimation_header() {
-    /* ========== AFTER LOADING ========== */
-    var afterloading = gsap.timeline();
-    var element_transition = CSSRulePlugin.getRule('.elmnt-transition::after');
-
-    afterloading
-        .to(element_transition, {duration: 0.2, cssRule: {scaleX: 1}, stagger: 1})
-        .to('.elmnt-transition__span', { duration: 0.4,  opacity:1})
-        .to(element_transition, {duration: 0.4, cssRule: {transformOrigin: 'right', scaleX: 0}, stagger: 1})
-        .to('.header-main-opacity', { duration: 0.5, opacity:1})
-        .from('.header-background__span', {duration: 1, y:"100%", ease: Power4.easeOut, stagger: 0.2});
-
-
-    /* ========== HEADER SCROLL ========== */
-    gsap.to('.header-main', {
-        scrollTrigger: {
-            trigger: '.header',
-            start: 'top top',
-            scrub: 0.5
-        },            
-        y:"-50%", 
-        ease: "none"
-    });            
+    init: () => {
+        siteFunc.initMobNavbar();
+        siteFunc.goToSection();
+        siteFunc.automatedYear();
+    },
 }
 
+window.addEventListener("DOMContentLoaded", (event) => {
+    siteFunc.init();
 
-function deskAnimation_about() {
-    
-    /* ========= ABOUT TITLE ======== */
-    gsap.from('.about-titles__span', {
-        scrollTrigger: {
-            trigger: '.about',
-            start: 'top 50%',
-        },
-        duration: 1, 
-        y:"100%", 
-        ease: Power4.easeOut, 
-        stagger: 0.2                   
-    });
+    /* RELOAD WHEN RESIZE */
+    // window.onresize = () => location.reload();
+});
 
-    /* ========= ABOUT PROFILE PIC ======== */
-    var about_pfpic = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.about-pfpic',
-            start: 'top center',
-        }
-    });
-    var about_pfpic_after = CSSRulePlugin.getRule('.about-pfpic::after');
-    
-    about_pfpic
-        .to(about_pfpic_after, {duration: 0.4, cssRule: {scaleY: 1}})
-        .to('.about-pfpic__img', { duration: 0.3,  opacity:1})
-        .to(about_pfpic_after, {duration: 0.4, cssRule: {transformOrigin: 'bottom', scaleY: 0}})        
-}
-
-
-function deskAnimation_featured() {
-
-    var scrollValue = {
-        trigger: '.featured',
-        start: 'top 80%',
-        scrub: true,
-    };
-
-    gsap.to('.featured-slide-1st', {
-        duration: 1.5,
-        scrollTrigger: scrollValue,
-        x:"-30%"
-    });
-
-    gsap.to('.featured-slide-2nd', {
-        duration: 2.5,
-        scrollTrigger: scrollValue,
-        x:"-50%"
-    });        
-    
-    gsap.to('.featured-slide-main', {
-        duration: 3,
-        scrollTrigger:{
-            trigger: '.featured',
-            start: 'top 80%',
-            scrub: 0.8   
-        },
-        x:"-30%"
-    });
-    
-
-    var featuredscroll = document.querySelectorAll('.ftcard');
-    var ctr = 1;
-    
-    featuredscroll.forEach(function() {
-        var ftcard = gsap.timeline({
-            scrollTrigger:{
-                trigger: '#ftcard'+ctr,
-                start: 'top 90%',
-                end: 'bottom 10%',
-                scrub: 0.6,
-            }
-        });
-    
-        ftcard
-            .from('.ftcard'+ctr+'-photo', {duration: 0.5, y:"30%"})
-            .to('.ftcard'+ctr+'-photo', {duration: 0.5, y:"-10%"});  
-            
-        ctr++;
-    
-    });
-    
-    
-}
-
-function deskAnimation_experiments() {
-    /* ========== FUN EXPERIMENTS ========== */
-    var experiment_scroll = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.experiment-info__title',
-            start: 'top 60%'
-        }
-    });
-    var experiment_title_after = CSSRulePlugin.getRule('.experiment-info__title::after');
-
-    experiment_scroll.to(experiment_title_after, {duration: 0.5, cssRule: {y: '10%'}});  
-}
-
+// DURING SCROLL
+window.addEventListener('scroll', () => {
+    siteFunc.updateActiveSection();
+});
