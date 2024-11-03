@@ -96,7 +96,7 @@ const siteFunc = {
     goToSection: () => {
         const links = document.querySelectorAll('a[href^="#"]');
         const hamburger = document.querySelector('.hamburger');
-        
+
         links.forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -115,6 +115,30 @@ const siteFunc = {
 
     },
 
+    automateYearsOfExperience: () => {
+        const elem = document.querySelector('.yr-xp');
+
+        const xpMonthStart = 1;
+        const xpYearStart = 2018;
+
+        const today = new Date();
+        let totalYears =  today.getFullYear() - xpYearStart;
+        let currentMonth = today.getMonth();
+
+        let msg = `${totalYears} years`;
+
+        if(currentMonth > xpMonthStart) {
+            msg+=` and ${currentMonth} months`;
+        } else if(currentMonth === xpMonthStart) {
+            msg+=` and ${currentMonth} month`;
+        }
+        
+        if(isThere(elem)) {
+            elem.textContent = msg;
+        }
+
+    },
+
     automatedYear: () => {
         var date = new Date();
         document.querySelector('.copyright__span').innerHTML = date.getFullYear();
@@ -123,6 +147,7 @@ const siteFunc = {
     init: () => {
         siteFunc.initMobNavbar();
         siteFunc.goToSection();
+        siteFunc.automateYearsOfExperience();
         siteFunc.automatedYear();
     },
 }
