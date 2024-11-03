@@ -122,7 +122,7 @@ const siteFunc = {
         const xpYearStart = 2018;
 
         const today = new Date();
-        let totalYears = xpYearStart - today.getFullYear();
+        let totalYears =  today.getFullYear() - xpYearStart;
         let currentMonth = today.getMonth();
 
         let msg = `${totalYears} years`;
