@@ -130,7 +130,18 @@ const deskAnimationFunc = {
 
 }
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    deskAnimationFunc.init();
+// FOR DESKTOP MEDIA QUERY
+let mquery = window.matchMedia('(min-width: 992px)');
+
+// MEDIA QUERY FUNCTION
+const mediaQueryFunc = (reso) =>  {
+    if(reso.matches) {
+        deskAnimationFunc.init();
+    }
+}
+
+mquery.addEventListener("change", function() {
+    mediaQueryFunc(mquery);
 });
+mediaQueryFunc(mquery);
 

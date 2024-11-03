@@ -1,5 +1,3 @@
-const animationScripts = ['assets/js/gsap.min.js', 'assets/js/ScrollTrigger.min.js', 'assets/js/CSSRulePlugin.min.js', 'assets/js/siteAnimation.js'];
-
 /* CHECK IF THERE IS THE ELEMENT */ 
 const isThere = (element) => {
     return typeof(element) != 'undefined' && element != null;
@@ -124,7 +122,7 @@ const siteFunc = {
         const xpYearStart = 2018;
 
         const today = new Date();
-        let totalYears =  today.getFullYear() - xpYearStart;
+        let totalYears = xpYearStart - today.getFullYear();
         let currentMonth = today.getMonth();
 
         let msg = `${totalYears} years`;
@@ -146,12 +144,6 @@ const siteFunc = {
         document.querySelector('.copyright__span').innerHTML = date.getFullYear();
     },
 
-    initAnimationScripts: () => {
-        animationScripts.forEach((script) => {
-            document.write(`<script src="${script}"><\/script>`);
-        });
-    },
-
     init: () => {
         siteFunc.initMobNavbar();
         siteFunc.goToSection();
@@ -171,17 +163,3 @@ window.addEventListener("DOMContentLoaded", (event) => {
 window.addEventListener('scroll', () => {
     siteFunc.updateActiveSection();
 });
-
-let mquery = window.matchMedia('(min-width: 992px)');
-
-// MEDIA QUERY FUNCTION
-const mediaQueryFunc = (reso) =>  {
-    if(reso.matches) {
-        siteFunc.initAnimationScripts();
-    }
-}
-
-mquery.addEventListener("change", function() {
-    mediaQueryFunc(mquery);
-});
-mediaQueryFunc(mquery);
