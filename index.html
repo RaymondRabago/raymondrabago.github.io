@@ -86,7 +86,11 @@
             </div>            
             <div class="about__div">
                 <div class="about-pfpic">
-                    <img loading="lazy" src="assets/images/RaymondRabago.jpg" alt="Raymond Rabago" class="about-pfpic__img">
+                    <picture>
+                        <source media="(min-width:451px)" srcset="assets/images/RaymondRabago.jpg" width="400" height="601">
+                        <source media="(max-width:450px)" srcset="assets/images/RaymondRabago.jpg" width="382" height="495">
+                        <img loading="lazy" src="assets/images/RaymondRabago.jpg" alt="Raymond Rabago" class="about-pfpic__img" width="382" height="495">
+                    </picture>
                 </div>
             </div>
             <div class="about__div about-info">
@@ -135,20 +139,22 @@
     <section class="featured js-section" id="featured">
         <div class="featured-titles">
             <p class="featured-titles__content featured-titles--opacity  featured-slide-1st">Selected Projects Selected Projects Selected Projects Selected Projects Selected Projects</p>
-            <p class="featured-titles__content featured-slide-main">Projects Featured Projects Featured Projects Featured Projects Featured Projects Featured Projects</p>
+            <h2 class="featured-titles__content featured-slide-main">Projects Featured Projects Featured Projects Featured Projects Featured Projects Featured Projects</h2>
             <p class="featured-titles__content featured-titles--opacity  featured-slide-2nd">Projects Selected Projects Selected Projects Selected Projects Selected Projects Selected Projects</p>
         
             <h2 class="featured-titles__mobile">Featured Projects</h2>
         </div>
-
-        
         
         <div class="container">
 
             <div class="ftcard ftcard--inforight" id="ftcard1">
                 <div class="ftcard-photo ftcard1-photo ">
-                    <a href="https://armoury.ph/" target="_blank" class="ftcard-photo__link">
-                        <img loading="lazy" src="assets/images/Armoury.jpg" alt="Armoury" class="ftcard-photo__img">
+                    <a href="https://armoury.ph/" target="_blank" class="ftcard-photo__link" aria-label="Armoury">
+                        <picture>
+                            <source media="(min-width:451px)" srcset="assets/images/ft-desk-armoury.webp" width="878" height="443">
+                            <source media="(max-width:450px)" srcset="assets/images/ft-mob-armoury.webp" width="330" height="167">
+                            <img loading="lazy" src="assets/images/ft-mob-armoury.webp" alt="Armoury" width="330" height="167" class="ftcard-photo__img">
+                        </picture>
                     </a>
                 </div>
                 <div class="ftcard-info">
@@ -172,16 +178,24 @@
                     <a href="https://franciskong.com/"  target="_blank" class="btn btn--white ftcard-info__btn">Visit Website</a>
                 </div>                
                 <div class="ftcard-photo ftcard2-photo">
-                    <a href="https://franciskong.com/" target="_blank" class="ftcard-photo__link">
-                        <img loading="lazy" src="assets/images/FrancisKong.png" alt="Francis Kong" class="ftcard-photo__img">
+                    <a href="https://franciskong.com/" target="_blank" class="ftcard-photo__link" aria-label="Francis Kong">
+                        <picture>
+                            <source media="(min-width:451px)" srcset="assets/images/ft-desk-francis-kong.webp" width="878" height="443">
+                            <source media="(max-width:450px)" srcset="assets/images/ft-mob-francis-kong.webp" width="330" height="167">
+                            <img loading="lazy" src="assets/images/ft-mob-francis-kong.webp" alt="Francis Kong" width="330" height="167" class="ftcard-photo__img">
+                        </picture>                        
                     </a>
                 </div>
             </div>  
         
             <div class="ftcard ftcard--inforight" id="ftcard3">
                 <div class="ftcard-photo ftcard3-photo">
-                    <a href="https://mueblesitaliano.ph/" target="_blank" class="ftcard-photo__link">
-                        <img loading="lazy" src="assets/images/MueblesItaliano.png" alt="Muebles Italiano" class="ftcard-photo__img">
+                    <a href="https://mueblesitaliano.ph/" target="_blank" class="ftcard-photo__link" aria-label="Muebles Italiano">
+                        <picture>
+                            <source media="(min-width:451px)" srcset="assets/images/ft-desk-muebles-italiano.webp" width="878" height="443">
+                            <source media="(max-width:450px)" srcset="assets/images/ft-mob-muebles-italiano.webp" width="330" height="167">
+                            <img loading="lazy" src="assets/images/ft-mob-muebles-italiano.webp" alt="Muebles Italiano" width="330" height="167" class="ftcard-photo__img">
+                        </picture>                         
                     </a>
                 </div>
                 <div class="ftcard-info">
@@ -205,17 +219,24 @@
                     <a href="https://richfieldsplastics.com/" target="_blank" class="btn btn--white ftcard-info__btn">Visit Website</a>                    
                 </div>                
                 <div class="ftcard-photo ftcard4-photo">
-                    <a href="https://richfieldsplastics.com/" target="_blank" class="ftcard-photo__link">
-                        <img loading="lazy" src="assets/images/RichfieldsPlastics.png" alt="Richfields" class="ftcard-photo__img">
+                    <a href="https://richfieldsplastics.com/" target="_blank" class="ftcard-photo__link" aria-label="Richfields">
+                        <picture>
+                            <source media="(min-width:451px)" srcset="assets/images/ft-desk-richfields.webp" width="878" height="443">
+                            <source media="(max-width:450px)" srcset="assets/images/ft-mob-richfields.webp" width="330" height="167">
+                            <img loading="lazy" src="assets/images/ft-mob-richfields.webp" alt="Richfields"  width="330" height="167" class="ftcard-photo__img">
+                        </picture>                          
                     </a>
                 </div>
             </div>    
             
-            
             <div class="ftcard ftcard--inforight" id="ftcard5">
                 <div class="ftcard-photo ftcard5-photo">
-                    <a href="https://puritanspride.ph/" target="_blank" class="ftcard-photo__link">
-                        <img loading="lazy" src="assets/images/PuritansPride.jpg" alt="Puritans Pride" class="ftcard-photo__img">
+                    <a href="https://puritanspride.ph/" target="_blank" class="ftcard-photo__link" aria-label="Puritan's Pride Philippines">
+                        <picture>
+                            <source media="(min-width:451px)" srcset="assets/images/ft-desk-puritans-pride.webp" width="878" height="443">
+                            <source media="(max-width:450px)" srcset="assets/images/ft-mob-puritans-pride.webp" width="330" height="167">
+                            <img loading="lazy" src="assets/images/ft-mob-puritans-pride.webp" alt="Puritan's Pride Philippines" width="330" height="167" class="ftcard-photo__img">
+                        </picture>                         
                     </a>
                 </div>
                 <div class="ftcard-info">
@@ -239,8 +260,12 @@
                     <a href="https://empanadabites.com/" target="_blank" class="btn btn--white ftcard-info__btn">Visit Website</a>                    
                 </div>                
                 <div class="ftcard-photo ftcard6-photo">
-                    <a href="https://empanadabites.com/" target="_blank" class="ftcard-photo__link">
-                        <img loading="lazy" src="assets/images/empanadabites.png" alt="Empanada Bites" class="ftcard-photo__img">
+                    <a href="https://empanadabites.com/" target="_blank" class="ftcard-photo__link" aria-label="Empanada Bites">
+                        <picture>
+                            <source media="(min-width:451px)" srcset="assets/images/ft-desk-empanadabites.webp" width="878" height="443">
+                            <source media="(max-width:450px)" srcset="assets/images/ft-mob-empanadabites.webp" width="330" height="167">
+                            <img loading="lazy" src="assets/images/ft-mob-empanadabites.webp" alt="Empanada Bites" width="330" height="167" class="ftcard-photo__img">
+                        </picture>                          
                     </a>
                 </div>
             </div>            
@@ -258,7 +283,13 @@
 
         <div class="container experiment-container">
             <div class="expcard expcard--1">
-                <img loading="lazy" src="assets/images/codepen-1.png" alt="" class="expcard__img">
+                <a href="https://codepen.io/rymnd_rbg/full/eYpJRwb" target="_blank" aria-label="Full Course Dinner - Art Direct (Responsive Image)">
+                    <picture>
+                        <source media="(min-width:451px)" srcset="assets/images/codepen-desk-1.webp" width="575" height="443">
+                        <source media="(max-width:450px)" srcset="assets/images/codepen-mob-1.webp" width="330" height="167">
+                        <img loading="lazy" src="assets/images/codepen-mob-1.webp" alt="Full Course Dinner - Art Direct (Responsive Image)" class="expcard__img" width="330" height="167">
+                    </picture>
+                </a>                
                 <div class="expcard-info">
                     <div class="expcard-info__div">
                         <h3 class="expcard-info__title">Full Course Dinner - Art Direct (Responsive Image)</h3>
@@ -267,7 +298,13 @@
                 </div>
             </div>    
             <div class="expcard expcard--2">
-                <img loading="lazy" src="assets/images/codepen-2.png" alt="" class="expcard__img">
+                <a href="https://codepen.io/rymnd_rbg/full/dyYpepL" target="_blank" aria-label="Types of Art - Image Hovers (CSS Filter)">
+                    <picture>
+                        <source media="(min-width:451px)" srcset="assets/images/codepen-desk-2.webp" width="575" height="443">
+                        <source media="(max-width:450px)" srcset="assets/images/codepen-mob-2.webp" width="330" height="167">
+                        <img loading="lazy" src="assets/images/codepen-mob-2.webp" alt="Types of Art - Image Hovers (CSS Filter)" class="expcard__img" width="330" height="167">
+                    </picture>
+                </a>                      
                 <div class="expcard-info">
                     <div class="expcard-info__div">
                         <h3 class="expcard-info__title">Types of Art - Image Hovers (CSS Filter)</h3>
@@ -276,7 +313,13 @@
                 </div>
             </div>   
             <div class="expcard expcard--3">
-                <img loading="lazy" src="assets/images/codepen-3.png" alt="" class="expcard__img">
+                <a href="https://codepen.io/rymnd_rbg/full/wvKBJzb" target="_blank" aria-label="Hero Component - Background Blend Mode">
+                    <picture>
+                        <source media="(min-width:451px)" srcset="assets/images/codepen-desk-3.webp" width="575" height="443">
+                        <source media="(max-width:450px)" srcset="assets/images/codepen-mob-3.webp" width="330" height="167">
+                        <img loading="lazy" src="assets/images/codepen-mob-3.webp" alt="Hero Component - Background Blend Mode" class="expcard__img" width="330" height="167">
+                    </picture>
+                </a>                        
                 <div class="expcard-info">
                     <div class="expcard-info__div">
                         <h3 class="expcard-info__title">Hero Component - Background Blend Mode</h3>
@@ -285,7 +328,13 @@
                 </div>
             </div>     
             <div class="expcard expcard--4">
-                <img loading="lazy" src="assets/images/codepen-4.png" alt="" class="expcard__img">
+                <a href="https://codepen.io/rymnd_rbg/full/ZEbBzYm" target="_blank" aria-label="Abstract - Images Hover (Glitch Effect)">
+                    <picture>
+                        <source media="(min-width:451px)" srcset="assets/images/codepen-desk-4.webp" width="575" height="443">
+                        <source media="(max-width:450px)" srcset="assets/images/codepen-mob-4.webp" width="330" height="167">
+                        <img loading="lazy" src="assets/images/codepen-mob-4.webp" alt="Abstract - Images Hover (Glitch Effect)" class="expcard__img" width="330" height="167">
+                    </picture>
+                </a>                   
                 <div class="expcard-info">
                     <div class="expcard-info__div">
                         <h3 class="expcard-info__title">Abstract - Images Hover (Glitch Effect)</h3>
@@ -317,10 +366,6 @@
         <p class="copyright__p">Copyright &copy; <span class="copyright__span"></span> Raymond Rabago</p>
     </section>
 
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/CSSRulePlugin.min.js"></script>
-    <script src="assets/js/mainscript.js"></script>    
-    <script src="assets/js/siteAnimation.js"></script>    
+    <script src="assets/js/script.min.js"></script>    
 </body>
 </html>
